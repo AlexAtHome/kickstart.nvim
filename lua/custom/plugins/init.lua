@@ -14,11 +14,10 @@ return {
     lazy = false,
   },
   {
-    'catppuccin/nvim',
-    name = 'catppuccin',
+    'Shatur/neovim-ayu',
     lazy = false,
     config = function()
-      vim.cmd.colorscheme 'catppuccin-mocha'
+      vim.cmd.colorscheme 'ayu'
     end,
   },
 }
