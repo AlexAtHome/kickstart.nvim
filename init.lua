@@ -771,13 +771,22 @@ require('lazy').setup({
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
         javascript = {
-          { 'prettierd', 'prettier' },
+          'prettierd',
+          'prettier',
+        },
+        typescript = {
+          'prettierd',
+          'prettier',
+        },
+        html = {
+          'prettierd',
+          'prettier',
         },
       },
       formatters = {
         prettier = {
           cwd = function()
-            return require('conform.util').root_file { 'package.json', '.prettierrc', '.prettierrc.json', '.prettierrc.js' }
+            return require('conform.util').root_file { '.prettierrc', '.prettierrc.json', '.prettierrc.js', 'prettier.config.js' }
           end,
           require_cwd = true,
         },
