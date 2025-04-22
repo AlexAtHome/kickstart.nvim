@@ -679,7 +679,7 @@ require('lazy').setup({
         -- htmx = {},
         tailwindcss = {},
         eslint = {
-          cwd = util.root_pattern('package.json', '.eslintrc.json', '.eslintrc'),
+          cwd = util.root_pattern('package.json', '.eslintrc.json', '.eslintrc.js', '.eslintrc'),
           require_cwd = true,
         },
         --
@@ -739,7 +739,7 @@ require('lazy').setup({
       {
         '<leader>f',
         function()
-          require('conform').format { async = true, lsp_format = 'fallback' }
+          require('conform').format { async = true, lsp_format = 'last' }
         end,
         mode = '',
         desc = '[F]ormat buffer',
@@ -773,6 +773,16 @@ require('lazy').setup({
         javascript = {
           'prettier',
           'prettierd',
+        },
+        typescript = {
+          'prettier',
+          'prettierd',
+        },
+        scss = {
+          'prettier',
+          'prettierd',
+          'stylelint',
+          'stylelint_lsp',
         },
         html = {
           'prettierd',
