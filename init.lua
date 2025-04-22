@@ -723,12 +723,12 @@ require('lazy').setup({
           },
         },
         angularls = {
-          cwd = util.root_pattern('angular.json', 'project.json'),
+          cwd = util.root_pattern('angular.json', 'project.json', 'package.json'),
           require_cwd = true,
           on_new_config = function(new_config, new_root_dir)
             new_config.root_dir = new_root_dir
           end,
-          filetypes = { 'typescript', 'html' },
+          filetypes = { 'typescript', 'html', 'htmlangular' },
           root_dir = util.root_pattern('angular.json', 'project.json'),
         },
         -- css_variables = {},
@@ -846,6 +846,10 @@ require('lazy').setup({
           'stylelint_lsp',
         },
         html = {
+          'prettierd',
+          'prettier',
+        },
+        htmlangular = {
           'prettierd',
           'prettier',
         },
