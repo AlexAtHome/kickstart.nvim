@@ -1,4 +1,3 @@
--- vim: tabstop=4 shiftwidth=4 noexpandtab
 -- You can add your own plugins here or in other files in this directory!
 --  I promise not to create any merge conflicts in this directory :)
 --
@@ -18,6 +17,19 @@ return {
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
       vim.cmd.colorscheme 'ayu'
+    end,
+  },
+  {
+    'joeveiga/ng.nvim',
+    cond = function()
+      local util = require 'lspconfig.util'
+      return util.root_pattern('angular.json', 'project.json', 'package.json')
+    end,
+    config = function()
+      local ng = require 'ng'
+      vim.keymap.set('n', 'gat', ng.goto_template_for_component, { noremap = true, silent = true, desc = 'Go to template' })
+      vim.keymap.set('n', 'gac', ng.goto_component_with_template_file, { noremap = true, silent = true, desc = 'Go to component' })
+      vim.keymap.set('n', 'gaT', ng.get_template_tcb, { noremap = true, silent = true, desc = 'Get template built file' })
     end,
   },
 }

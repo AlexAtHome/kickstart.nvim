@@ -353,6 +353,7 @@ require('lazy').setup({
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
         { '<leader>n', group = 'Create [N]ew...' },
         { '<leader>b', group = '[B]uffer' },
+        { 'ga', group = '[A]nglar', mode = 'n' },
       },
     },
   },
