@@ -12,15 +12,6 @@ return {
     'tpope/vim-fugitive',
     lazy = false,
   },
-  -- {
-  --   'rose-pine/neovim',
-  --   name = 'rose-pine',
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd.colorscheme 'rose-pine'
-  --   end,
-  -- },
   {
     'sainnhe/gruvbox-material',
     lazy = false,
@@ -31,6 +22,13 @@ return {
       vim.g.gruvbox_material_enable_italic = true
       vim.g.gruvbox_material_background = 'hard'
       vim.cmd.colorscheme 'gruvbox-material'
+
+      vim.cmd [[
+				highlight Normal guibg=none
+				highlight NonText guibg=none
+				highlight Normal ctermbg=none
+				highlight NonText ctermbg=none
+			]]
     end,
   },
   {
