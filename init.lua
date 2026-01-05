@@ -104,6 +104,8 @@ vim.o.number = true
 --  Experiment for yourself to see if you like it!
 vim.o.relativenumber = true
 
+vim.o.colorcolumn = '120'
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
 
@@ -699,6 +701,7 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
+        -- tsgo = {},
         ts_ls = {
           root_dir = util.root_pattern('package.json', 'tsconfig.json', 'jsconfig.json'),
           on_attach = function(client, _)
@@ -735,7 +738,7 @@ require('lazy').setup({
         angularls = {
           cwd = util.root_pattern('angular.json', 'project.json', 'package.json'),
           require_cwd = true,
-          on_new_config = function(new_config, new_root_dir)
+          on_new_Config = function(new_config, new_root_dir)
             new_config.root_dir = new_root_dir
           end,
           filetypes = { 'typescript', 'html', 'htmlangular' },
