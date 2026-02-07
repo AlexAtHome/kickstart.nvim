@@ -692,7 +692,7 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- clangd = {},
-        gopls = {},
+        -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -701,40 +701,14 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- tsgo = {},
-        ts_ls = {
-          root_dir = util.root_pattern('package.json', 'tsconfig.json', 'jsconfig.json'),
-          on_attach = function(client, _)
-            client.server_capabilities.document_formatting = false
-            client.server_capabilities.document_range_formatting = false
-          end,
-          settings = {
-            typescript = {
-              inlayHints = {
-                includeInlayParameterNameHints = 'all',
-                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-                includeInlayFunctionParameterTypeHints = true,
-                includeInlayVariableTypeHints = true,
-                includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-                includeInlayPropertyDeclarationTypeHints = true,
-                includeInlayFunctionLikeReturnTypeHints = true,
-                includeInlayEnumMemberValueHints = true,
-              },
-            },
-            javascript = {
-              inlayHints = {
-                includeInlayParameterNameHints = 'all',
-                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-                includeInlayFunctionParameterTypeHints = true,
-                includeInlayVariableTypeHints = true,
-                includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-                includeInlayPropertyDeclarationTypeHints = true,
-                includeInlayFunctionLikeReturnTypeHints = true,
-                includeInlayEnumMemberValueHints = true,
-              },
-            },
-          },
-        },
+        tsgo = {},
+        -- ts_ls = {
+        --   root_dir = util.root_pattern('package.json', 'tsconfig.json', 'jsconfig.json'),
+        --   on_attach = function(client, _)
+        --     client.server_capabilities.document_formatting = false
+        --     client.server_capabilities.document_range_formatting = false
+        --   end,
+        -- },
         angularls = {
           cwd = util.root_pattern('angular.json', 'project.json', 'package.json'),
           require_cwd = true,
@@ -745,10 +719,10 @@ require('lazy').setup({
           root_dir = util.root_pattern('angular.json', 'project.json'),
         },
         -- css_variables = {},
-        cssls = {},
-        html = {},
+        -- cssls = {},
+        -- html = {},
         -- htmx = {},
-        tailwindcss = {},
+        -- tailwindcss = {},
         eslint = {
           cwd = util.root_pattern('package.json', '.eslintrc.json', '.eslintrc.js', '.eslintrc'),
           require_cwd = true,
