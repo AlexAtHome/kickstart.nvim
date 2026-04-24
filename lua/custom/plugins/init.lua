@@ -10,7 +10,7 @@ return {
 	},
 	{
 		'3rd/image.nvim',
-		lazy = true,
+		lazy = false,
 		build = false, -- so that it doesn't build the rock https://github.com/3rd/image.nvim/issues/91#issuecomment-2453430239
 		opts = {
 			processor = 'magick_cli',
@@ -40,7 +40,7 @@ return {
 						[[]],
 						[[]],
 						[[]],
-						[[                                                                       ]],
+						[[]],
 						[[  ██████   █████                   █████   █████  ███                  ]],
 						[[ ░░██████ ░░███                   ░░███   ░░███  ░░░                   ]],
 						[[  ░███░███ ░███   ██████   ██████  ░███    ░███  ████  █████████████   ]],
@@ -49,7 +49,7 @@ return {
 						[[  ░███  ░░█████ ░███░░░  ░███ ░███  ░░░█████░    ░███  ░███ ░███ ░███  ]],
 						[[  █████  ░░█████░░██████ ░░██████     ░░███      █████ █████░███ █████ ]],
 						[[ ░░░░░    ░░░░░  ░░░░░░   ░░░░░░       ░░░      ░░░░░ ░░░░░ ░░░ ░░░░░  ]],
-						[[                                                                       ]],
+						[[]],
 						[[]],
 						[[]],
 						[[]],
@@ -66,19 +66,37 @@ return {
 							key = 'f',
 						},
 						{
-							desc = ' dotfiles',
-							group = 'Number',
+							desc = '󱙓 Grep',
+							group = 'Files',
 							action = function()
 								local builtin = require 'telescope.builtin'
-								builtin.find_files { cwd = vim.fn.stdpath 'config' }
+								builtin.live_grep()
+							end,
+							key = 'g',
+						},
+						{
+							desc = ' Recent files',
+							group = 'Files',
+							action = function()
+								local builtin = require 'telescope.builtin'
+								builtin.oldfiles()
 							end,
 							key = 'd',
 						},
 						{
 							desc = ' Git',
-							group = 'Label',
+							group = 'Files',
 							action = 'G',
-							key = 'g',
+							key = 'G',
+						},
+						{
+							desc = ' dotfiles',
+							group = 'Files',
+							action = function()
+								local builtin = require 'telescope.builtin'
+								builtin.find_files { cwd = vim.fn.stdpath 'config' }
+							end,
+							key = 'd',
 						},
 					},
 				},
