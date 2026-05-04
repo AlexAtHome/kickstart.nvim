@@ -28,11 +28,22 @@ return {
 		end,
 	},
 	{
+		'hedyhli/outline.nvim',
+		lazy = true,
+		cmd = { 'Outline', 'OutlineOpen' },
+		keys = { -- Example mapping to toggle outline
+			{ '|', '<cmd>Outline<CR>', desc = 'Toggle outline' },
+		},
+		opts = {
+			-- Your setup opts here
+		},
+	},
+	{
 		'nvimdev/dashboard-nvim',
 		event = 'VimEnter',
 		config = function()
 			require('dashboard').setup {
-				theme = 'doom',
+				theme = 'hyper',
 				change_to_vcs_root = true,
 				config = {
 					header = {
@@ -55,7 +66,7 @@ return {
 						[[]],
 						[[]],
 					},
-					center = {
+					shortcut = {
 						{ desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
 						{
 							icon = ' ',
@@ -81,7 +92,7 @@ return {
 								local builtin = require 'telescope.builtin'
 								builtin.oldfiles()
 							end,
-							key = 'd',
+							key = '.',
 						},
 						{
 							desc = ' Git',
