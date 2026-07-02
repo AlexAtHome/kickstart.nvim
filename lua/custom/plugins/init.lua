@@ -68,14 +68,7 @@ return {
 					},
 					shortcut = {
 						{ desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
-						{
-							icon = ' ',
-							icon_hl = '@variable',
-							desc = 'Files',
-							group = 'Label',
-							action = 'Telescope find_files',
-							key = 'f',
-						},
+						{ icon = ' ', icon_hl = '@variable', desc = 'Files', group = 'Label', action = 'Telescope find_files', key = 'f' },
 						{
 							desc = '󱙓 Grep',
 							group = 'Files',
@@ -94,12 +87,7 @@ return {
 							end,
 							key = '.',
 						},
-						{
-							desc = ' Git',
-							group = 'Files',
-							action = 'G',
-							key = 'G',
-						},
+						{ desc = ' Git', group = 'Files', action = 'G', key = 'G' },
 						{
 							desc = ' dotfiles',
 							group = 'Files',
