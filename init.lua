@@ -707,8 +707,8 @@ do
 		--    https://github.com/pmizio/typescript-tools.nvim
 		--
 		-- But for many setups, the LSP (`ts_ls`) will work just fine
-		-- ts_ls = {},
-		tsgo = {},
+		ts_ls = {},
+		-- tsgo = {},
 
 		angularls = {},
 
@@ -898,6 +898,8 @@ do
 			--
 			-- See `:help blink-cmp-config-keymap` for defining your own keymap
 			preset = 'default',
+      ['<c-j>'] = { 'select_next', 'fallback' },
+      ['<c-k>'] = { 'select_prev', 'fallback' },
 
 			-- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
 			--    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -1011,7 +1013,7 @@ do
 	--  Here are some example plugins that I've included in the Kickstart repository.
 	--  Uncomment any of the lines below to enable them (you will need to restart nvim).
 	--
-	require 'kickstart.plugins.debug'
+	-- require 'kickstart.plugins.debug'
 	require 'kickstart.plugins.indent_line'
 	require 'kickstart.plugins.lint'
 	require 'kickstart.plugins.autopairs'
